@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,13 @@
 		05276DD5261DD32800C05398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05276DD3261DD32800C05398 /* Main.storyboard */; };
 		05276DD7261DD32900C05398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05276DD6261DD32900C05398 /* Assets.xcassets */; };
 		05276DDA261DD32900C05398 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05276DD8261DD32900C05398 /* LaunchScreen.storyboard */; };
+		05276E07261DD81900C05398 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05276E06261DD81900C05398 /* GoogleService-Info.plist */; };
+		05276E0D261E730B00C05398 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E0C261E730B00C05398 /* CameraViewController.swift */; };
+		2987125370844AE4FE50D06F /* Pods_LunchApp0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C07980691A10D5E41BEDAF /* Pods_LunchApp0.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0011796D9F6A9A6930EC260C /* Pods-LunchApp0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchApp0.debug.xcconfig"; path = "Target Support Files/Pods-LunchApp0/Pods-LunchApp0.debug.xcconfig"; sourceTree = "<group>"; };
 		05276DCA261DD32800C05398 /* LunchApp0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunchApp0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05276DCD261DD32800C05398 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05276DCF261DD32800C05398 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,10 @@
 		05276DD6261DD32900C05398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05276DD9261DD32900C05398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05276DDB261DD32900C05398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05276E06261DD81900C05398 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		05276E0C261E730B00C05398 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		24C07980691A10D5E41BEDAF /* Pods_LunchApp0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LunchApp0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		281CA0843502BA88CC8148E3 /* Pods-LunchApp0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchApp0.release.xcconfig"; path = "Target Support Files/Pods-LunchApp0/Pods-LunchApp0.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2987125370844AE4FE50D06F /* Pods_LunchApp0.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,8 @@
 			children = (
 				05276DCC261DD32800C05398 /* LunchApp0 */,
 				05276DCB261DD32800C05398 /* Products */,
+				BA185D680B86EABA48347972 /* Pods */,
+				212EFC577D2A36D240C00B54 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +69,48 @@
 			children = (
 				05276DCD261DD32800C05398 /* AppDelegate.swift */,
 				05276DCF261DD32800C05398 /* SceneDelegate.swift */,
-				05276DD1261DD32800C05398 /* ViewController.swift */,
-				05276DD3261DD32800C05398 /* Main.storyboard */,
+				05276E0A261DDA0C00C05398 /* Controller */,
+				05276DE3261DD39D00C05398 /* View */,
 				05276DD6261DD32900C05398 /* Assets.xcassets */,
 				05276DD8261DD32900C05398 /* LaunchScreen.storyboard */,
 				05276DDB261DD32900C05398 /* Info.plist */,
+				05276E06261DD81900C05398 /* GoogleService-Info.plist */,
 			);
 			path = LunchApp0;
+			sourceTree = "<group>";
+		};
+		05276DE3261DD39D00C05398 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				05276DD3261DD32800C05398 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		05276E0A261DDA0C00C05398 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				05276DD1261DD32800C05398 /* ViewController.swift */,
+				05276E0C261E730B00C05398 /* CameraViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		212EFC577D2A36D240C00B54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24C07980691A10D5E41BEDAF /* Pods_LunchApp0.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA185D680B86EABA48347972 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0011796D9F6A9A6930EC260C /* Pods-LunchApp0.debug.xcconfig */,
+				281CA0843502BA88CC8148E3 /* Pods-LunchApp0.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05276DDE261DD32900C05398 /* Build configuration list for PBXNativeTarget "LunchApp0" */;
 			buildPhases = (
+				6B6E263E235A7955BB497174 /* [CP] Check Pods Manifest.lock */,
 				05276DC6261DD32800C05398 /* Sources */,
 				05276DC7261DD32800C05398 /* Frameworks */,
 				05276DC8261DD32800C05398 /* Resources */,
+				CE5C5A5F6621557782AE47D2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,10 +175,53 @@
 				05276DDA261DD32900C05398 /* LaunchScreen.storyboard in Resources */,
 				05276DD7261DD32900C05398 /* Assets.xcassets in Resources */,
 				05276DD5261DD32800C05398 /* Main.storyboard in Resources */,
+				05276E07261DD81900C05398 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6B6E263E235A7955BB497174 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LunchApp0-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE5C5A5F6621557782AE47D2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LunchApp0/Pods-LunchApp0-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LunchApp0/Pods-LunchApp0-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LunchApp0/Pods-LunchApp0-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		05276DC6261DD32800C05398 /* Sources */ = {
@@ -138,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05276DD2261DD32800C05398 /* ViewController.swift in Sources */,
+				05276E0D261E730B00C05398 /* CameraViewController.swift in Sources */,
 				05276DCE261DD32800C05398 /* AppDelegate.swift in Sources */,
 				05276DD0261DD32800C05398 /* SceneDelegate.swift in Sources */,
 			);
@@ -283,6 +375,7 @@
 		};
 		05276DDF261DD32900C05398 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0011796D9F6A9A6930EC260C /* Pods-LunchApp0.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,12 +388,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Noneudemy.LunchApp0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		05276DE0261DD32900C05398 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 281CA0843502BA88CC8148E3 /* Pods-LunchApp0.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -313,7 +407,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Noneudemy.LunchApp0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
