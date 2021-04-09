@@ -28,8 +28,13 @@ class ViewController: AMPagerTabsViewController {
         
         if Auth.auth().currentUser != nil {
             
+            //サインイン画面遷移
+            performSegue(withIdentifier: "", sender: nil)
             
         }else {
+            //新規登録
+            performSegue(withIdentifier: "createVC", sender: nil)
+            
             
             
         }
@@ -52,7 +57,7 @@ class ViewController: AMPagerTabsViewController {
         
         for i in 0 ..< 5 {
             
-            let viewController = self.storyboard?.instantiateViewController(withIdentifier: "view1") as! CameraViewController
+            let viewController = self.storyboard?.instantiateViewController(withIdentifier: "view1") as! ContentsViewController
             viewController.title = ""
             viewController.index = i
             vcArray.append(viewController)
