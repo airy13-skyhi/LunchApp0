@@ -116,6 +116,15 @@ class CreateUserViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        userNameTextField.resignFirstResponder()
+        profileTextView.resignFirstResponder()
+     
+        
+    }
+    
+    
 
     /*
     // MARK: - Navigation

@@ -9,8 +9,10 @@ import UIKit
 import YPImagePicker
 import EMAlertController
 import PKHUD
+import Cosmos
 
-class CameraViewController: UIViewController {
+class CameraViewController: UIViewController, DoneSendContents {
+    
     
     
     @IBOutlet weak var imageView: UIImageView!
@@ -134,6 +136,18 @@ class CameraViewController: UIViewController {
         }
         
     }
+    
+    
+    func checkDone() {
+        
+        HUD.hide()
+        self.tabBarController?.selectedIndex = 0
+        
+        
+        
+    }
+    
+    
     
     
     /*
