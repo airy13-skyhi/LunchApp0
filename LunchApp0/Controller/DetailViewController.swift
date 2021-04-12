@@ -82,10 +82,38 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         reviewView.rating = (contentModel?.rate)!
         
         let profileImageView = cell.contentView.viewWithTag(5) as! UIImageView
+        profileImageView.sd_setImage(with: URL(string: (contentModel?.sender![0])!), completed: nil)
+        profileImageView.layer.cornerRadius = 20
         
+        let nameLabel = cell.contentView.viewWithTag(6) as! UITextView
+        nameLabel.text = contentModel?.sender![1]
+        
+        let profileView = cell.contentView.viewWithTag(7) as! UITextView
+        profileView.text = contentModel?.sender![1]
         
         
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 996
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let webVC = segue.destination as! WebViewController
+        webVC.shopName = (contentModel?.shopName)!
+        
+    }
+    
+    
+    @IBAction func toWebView(_ sender: Any) {
+        
+        performSegue(withIdentifier: "webVC", sender: nil)
+        
     }
     
 

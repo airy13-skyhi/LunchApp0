@@ -274,7 +274,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="7" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7M3-in-jyn">
-                                                    <rect key="frame" x="20" y="537" width="373" height="155"/>
+                                                    <rect key="frame" x="81" y="537" width="312" height="155"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -288,6 +288,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vz3-xo-TgU">
+                                <rect key="frame" x="3" y="769" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="moreInfo"/>
+                                <connections>
+                                    <action selector="toWebView:" destination="fIZ-XL-jmt" eventType="touchUpInside" id="q9Z-jH-MKc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ftk-de-emv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -295,11 +303,58 @@
                     <navigationItem key="navigationItem" id="RF2-yE-6Qw"/>
                     <connections>
                         <outlet property="tableView" destination="PEE-1b-e8C" id="3mC-e9-Ejc"/>
+                        <segue destination="5Mv-Z9-cOm" kind="presentation" identifier="webVC" id="Kid-Pb-TaC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dBd-EO-z4K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3440.579710144928" y="97.767857142857139"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="iR8-HO-ljv">
+            <objects>
+                <viewController id="5Mv-Z9-cOm" customClass="WebViewController" customModule="LunchApp0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q3u-GY-iWK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AhX-nY-CW6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="798"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hGd-y8-gcK">
+                                <rect key="frame" x="0.0" y="798" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="←" id="F25-gR-Rw7">
+                                        <connections>
+                                            <action selector="back:" destination="5Mv-Z9-cOm" id="4jm-3H-lrZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="l0A-n8-Vtv"/>
+                                    <barButtonItem title="→" id="q4F-JR-QiG">
+                                        <connections>
+                                            <action selector="go:" destination="5Mv-Z9-cOm" id="sgt-ZT-aT2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Krz-76-we2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="AhX-nY-CW6" id="n91-1W-DB2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3iV-1x-cBy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3440.579710144928" y="799.55357142857144"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="E77-lC-0jD">
@@ -515,6 +570,7 @@
     </designables>
     <resources>
         <image name="backgroundImage" width="1920" height="1440"/>
+        <image name="moreInfo" width="128" height="128"/>
         <image name="profile" width="256" height="256"/>
         <image name="send" width="64" height="64"/>
         <systemColor name="labelColor">
