@@ -25,6 +25,7 @@ class CameraViewController: UIViewController, DoneSendContents {
     var categoryString = String()
     var userDefaultsEX = UserDefaultsEX()
     var sendDBModel = SendDBModel()
+    var loadModel = LoadModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class CameraViewController: UIViewController, DoneSendContents {
         textView.layer.cornerRadius = 20
         categoryButton.layer.cornerRadius = 20
         
+        sendDBModel.doneSendContents = self
         
         if imageView.image != nil {
             
@@ -132,6 +134,7 @@ class CameraViewController: UIViewController, DoneSendContents {
         if textField.text?.isEmpty != true && categoryString.isEmpty != true && nameTextField.text?.isEmpty != true && textView.text.isEmpty != true {
             
             
+            self.sendDBModel.sendDB(price: textField.text!, category: categoryString, shopName: nameTextField.text!, reView: textView.text!, userName: (profile?.userName)!, imageData: (imageView.image?.jpegData(compressionQuality: 0.05))!, sender: profile!, rate: self.reviewView.rating)
             
         }
         
@@ -143,6 +146,8 @@ class CameraViewController: UIViewController, DoneSendContents {
         HUD.hide()
         self.tabBarController?.selectedIndex = 0
         
+        //受信
+        loadModel.loadContents(category: "\(Constants.menuArray[0])")
         
         
     }

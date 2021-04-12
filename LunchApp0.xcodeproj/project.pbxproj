@@ -23,6 +23,7 @@
 		05276E25261FD31A00C05398 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E24261FD31A00C05398 /* Constants.swift */; };
 		05276E28261FFE7200C05398 /* LoadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E27261FFE7200C05398 /* LoadModel.swift */; };
 		05276E2B261FFFD800C05398 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E2A261FFFD800C05398 /* ContentModel.swift */; };
+		05276E2E262319E900C05398 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E2D262319E900C05398 /* DetailViewController.swift */; };
 		2987125370844AE4FE50D06F /* Pods_LunchApp0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C07980691A10D5E41BEDAF /* Pods_LunchApp0.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		05276E24261FD31A00C05398 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		05276E27261FFE7200C05398 /* LoadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadModel.swift; sourceTree = "<group>"; };
 		05276E2A261FFFD800C05398 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		05276E2D262319E900C05398 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		24C07980691A10D5E41BEDAF /* Pods_LunchApp0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LunchApp0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		281CA0843502BA88CC8148E3 /* Pods-LunchApp0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchApp0.release.xcconfig"; path = "Target Support Files/Pods-LunchApp0/Pods-LunchApp0.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				05276E0C261E730B00C05398 /* ContentsViewController.swift */,
 				05276E0F261E754D00C05398 /* CreateUserViewController.swift */,
 				05276E20261EBDF600C05398 /* CameraViewController.swift */,
+				05276E2D262319E900C05398 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05276E2E262319E900C05398 /* DetailViewController.swift in Sources */,
 				05276DD2261DD32800C05398 /* ViewController.swift in Sources */,
 				05276E14261E7B2600C05398 /* sendDBModel.swift in Sources */,
 				05276E10261E754D00C05398 /* CreateUserViewController.swift in Sources */,
