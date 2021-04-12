@@ -51,10 +51,20 @@ class LoadModel {
                 
             }
             
-            
         }
         
     }
+    
+    
+    func loadOwnContents(id:String) {
+        
+        db.collection("Users").document(id).collection("ownContens").order(by: "data").addSnapshotListener { (snapShot, error) in
+            <#code#>
+        }
+        
+    }
+    
+    
     
 }
 

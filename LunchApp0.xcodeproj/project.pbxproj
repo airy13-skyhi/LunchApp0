@@ -25,6 +25,9 @@
 		05276E2B261FFFD800C05398 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E2A261FFFD800C05398 /* ContentModel.swift */; };
 		05276E2E262319E900C05398 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E2D262319E900C05398 /* DetailViewController.swift */; };
 		05276E312624483700C05398 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E302624483700C05398 /* WebViewController.swift */; };
+		05276E342624552000C05398 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E332624552000C05398 /* ProfileViewController.swift */; };
+		05276E38262457DD00C05398 /* ContentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E36262457DD00C05398 /* ContentsCell.swift */; };
+		05276E39262457DD00C05398 /* ContentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05276E37262457DD00C05398 /* ContentsCell.xib */; };
 		2987125370844AE4FE50D06F /* Pods_LunchApp0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C07980691A10D5E41BEDAF /* Pods_LunchApp0.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +53,9 @@
 		05276E2A261FFFD800C05398 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 		05276E2D262319E900C05398 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		05276E302624483700C05398 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		05276E332624552000C05398 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		05276E36262457DD00C05398 /* ContentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCell.swift; sourceTree = "<group>"; };
+		05276E37262457DD00C05398 /* ContentsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentsCell.xib; sourceTree = "<group>"; };
 		24C07980691A10D5E41BEDAF /* Pods_LunchApp0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LunchApp0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		281CA0843502BA88CC8148E3 /* Pods-LunchApp0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchApp0.release.xcconfig"; path = "Target Support Files/Pods-LunchApp0/Pods-LunchApp0.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				05276DD3261DD32800C05398 /* Main.storyboard */,
+				05276E36262457DD00C05398 /* ContentsCell.swift */,
+				05276E37262457DD00C05398 /* ContentsCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -118,6 +126,7 @@
 				05276E20261EBDF600C05398 /* CameraViewController.swift */,
 				05276E2D262319E900C05398 /* DetailViewController.swift */,
 				05276E302624483700C05398 /* WebViewController.swift */,
+				05276E332624552000C05398 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -219,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05276DDA261DD32900C05398 /* LaunchScreen.storyboard in Resources */,
+				05276E39262457DD00C05398 /* ContentsCell.xib in Resources */,
 				05276DD7261DD32900C05398 /* Assets.xcassets in Resources */,
 				05276DD5261DD32800C05398 /* Main.storyboard in Resources */,
 				05276E07261DD81900C05398 /* GoogleService-Info.plist in Resources */,
@@ -285,7 +295,9 @@
 				05276E25261FD31A00C05398 /* Constants.swift in Sources */,
 				05276E19261E9DB200C05398 /* UserDefaultsEX.swift in Sources */,
 				05276DD0261DD32800C05398 /* SceneDelegate.swift in Sources */,
+				05276E38262457DD00C05398 /* ContentsCell.swift in Sources */,
 				05276E312624483700C05398 /* WebViewController.swift in Sources */,
+				05276E342624552000C05398 /* ProfileViewController.swift in Sources */,
 				05276E1C261EA12800C05398 /* ProfileModel.swift in Sources */,
 				05276E21261EBDF600C05398 /* CameraViewController.swift in Sources */,
 			);

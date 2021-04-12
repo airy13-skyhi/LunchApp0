@@ -116,6 +116,15 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
+    
+    @IBAction func toProfileVC(_ sender: Any) {
+        
+        let profileVC = self.storyboard?.instantiateViewController(identifier: "profileVC") as! ProfileViewController
+        
+        profileVC.contentModel = contentModel
+        self.navigationController?.pushViewController(profileVC, animated: true)
+    }
+    
 
     /*
     // MARK: - Navigation
