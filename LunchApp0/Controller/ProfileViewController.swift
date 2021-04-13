@@ -12,7 +12,10 @@ import Cosmos
 import SSSpinnerButton
 
 
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GetDataProtocol, GetProfileDataProtocol, DoneSendContents0 {
+    
+    
+    
     
     
     
@@ -21,7 +24,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var followLabel: UILabel!
     @IBOutlet weak var followerLabel: UILabel!
-    @IBOutlet weak var follorButton: SSSpinnerButton!
+    @IBOutlet weak var followButton: SSSpinnerButton!
+    
+    
     
     @IBOutlet weak var profileTextLabel: UILabel!
     
@@ -43,33 +48,49 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         imageView.layer.cornerRadius = imageView.frame.width/2
         tableView.register(UINib(nibName: "ContentsCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
+        sendDBModel.doneSendContents0 = self
+        
         //自分のプロフィールを表示する　タブ２
         if self.tabBarController?.selectedIndex == 2 {
             
-            follorButton.isHidden = true
+            followButton.isHidden = true
+            setUp(id: Auth.auth().currentUser!.uid)
+            
             
         }else {
             
             if contentModel?.userID == Auth.auth().currentUser?.uid {
                 
-                follorButton.isHidden = true
+                followButton.isHidden = true
                 
             }
-            
+            //setUp
+            setUp(id: (contentModel?.userID)!)
+            imageView.sd_setImage(with: URL(string: (contentModel?.sender![0])!), completed: nil)
+            imageView.layer.cornerRadius =  20
+            imageView.clipsToBounds = true
+            label.text = contentModel?.sender![3]
+            profileTextLabel.text = contentModel?.sender![1]
         }
+        
     }
     
     
     func setUp(id:String) {
         
+        loadModel.getDataProtocol = self
+        loadModel.getProfileDataProtocol = self
+        
         //プロフィールを受信
+        loadModel.loadProfile(id: id)
         
         //フォローの受信
         
+        
         //フォロワーの受信
         
-        
-        
+        //コンテンツを受信する
+        loadModel.loadOwnContents(id: id)
         
     }
     
@@ -80,6 +101,59 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    func getData(dataArray: [ContentModel]) {
+        
+        contentModelArray = dataArray
+        
+        tableView.reloadData()
+    }
+    
+    @IBAction func follow(_ sender: Any) {
+        
+        followButton.startAnimate(spinnerType: .ballClipRotate, spinnercolor: .red, spinnerSize: 20) {
+            
+            if self.followButton.titleLabel?.text == "フォローをする" {
+                
+                self.sendDBModel.followAction(id: (self.contentModel?.userID)!, followOrNot: true, contentModel: self.contentModel!)
+                
+            }else if self.followButton.titleLabel?.text == "フォローをやめる" {
+                
+                self.sendDBModel.followAction(id: (self.contentModel?.userID)!, followOrNot: false, contentModel: self.contentModel!)
+                
+            }
+            
+            
+        }
+        
+    }
+    
+    func checkDone0(flag: Bool) {
+        
+        if flag == true {
+            
+            self.followButton.stopAnimatingWithCompletionType(completionType: .none) {
+                
+                self.followButton.setTitle("フォローをやめる", for: .normal)
+            }
+        }else {
+            
+            self.followButton.stopAnimatingWithCompletionType(completionType: .none) {
+                
+                self.followButton.setTitle("フォローをする", for: .normal)
+            }
+            
+        }
+        
+        
+        
+    }
+    
+    
+    
+    func getProfileData(dataArray: [ProfileModel]) {
         <#code#>
     }
     
