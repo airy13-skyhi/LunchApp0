@@ -12,7 +12,9 @@ import Cosmos
 import SSSpinnerButton
 
 
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GetDataProtocol, GetProfileDataProtocol, DoneSendContents0 {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GetDataProtocol, GetProfileDataProtocol, DoneSendContents0, GetFollows, GetFollowers {
+    
+    
     
     
     
@@ -37,6 +39,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     var sendDBModel = SendDBModel()
     var contentModel:ContentModel?
     var contentModelArray = [ContentModel]()
+    var followersArray = [FollowerModel]()
+    var followArray = [FollowModel]()
     
     
     override func viewDidLoad() {
@@ -80,28 +84,41 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         loadModel.getDataProtocol = self
         loadModel.getProfileDataProtocol = self
+        loadModel.getFollows = self
+        loadModel.getFollowers = self
+        
         
         //プロフィールを受信
         loadModel.loadProfile(id: id)
         
-        //フォローの受信
-        
-        
         //フォロワーの受信
+        loadModel.getFollowerData(id: id)
+        
+        //フォローの受信
+        loadModel.getFollowData(id: id)
         
         //コンテンツを受信する
         loadModel.loadOwnContents(id: id)
         
     }
     
-    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        
+        return contentModelArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ContentsCell
+        
+        cell.contentImageView.sd_setImage(with: URL(string: contentModelArray[indexPath.row].imageURLString!), completed: nil)
+        
+        
+        return cell
     }
     
     func getData(dataArray: [ContentModel]) {
@@ -152,9 +169,43 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     
+    func getFollows(followArray: [FollowModel], exist: Bool) {
+        
+        self.followArray = []
+        self.followArray = followArray
+        followLabel.text = String(self.followArray.count)
+        
+    }
+    
+    
+    
+    func getFollowers(followersArray: [FollowerModel], exist: Bool) {
+        
+        self.followersArray = []
+        self.followersArray = followersArray
+        
+        followerLabel.text = String(self.followersArray.count)
+        
+        if exist == true {
+            
+            self.followButton.setTitle("フォローをやめる", for: .normal)
+        }else {
+            
+            self.followButton.setTitle("フォローをする", for: .normal)
+            
+        }
+        
+    }
+    
+    
+    
     
     func getProfileData(dataArray: [ProfileModel]) {
-        <#code#>
+        
+        imageView.sd_setImage(with: URL(string: dataArray[0].imageURLString!), completed: nil)
+        label.text = dataArray[0].userName
+        profileTextLabel.text = dataArray[0].profileText
+        
     }
     
 

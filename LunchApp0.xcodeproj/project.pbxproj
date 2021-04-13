@@ -28,6 +28,8 @@
 		05276E342624552000C05398 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E332624552000C05398 /* ProfileViewController.swift */; };
 		05276E38262457DD00C05398 /* ContentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E36262457DD00C05398 /* ContentsCell.swift */; };
 		05276E39262457DD00C05398 /* ContentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05276E37262457DD00C05398 /* ContentsCell.xib */; };
+		05276E3C2625999600C05398 /* FollowerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E3B2625999600C05398 /* FollowerModel.swift */; };
+		05276E3F26259A6300C05398 /* FollowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E3E26259A6300C05398 /* FollowModel.swift */; };
 		2987125370844AE4FE50D06F /* Pods_LunchApp0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C07980691A10D5E41BEDAF /* Pods_LunchApp0.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		05276E332624552000C05398 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		05276E36262457DD00C05398 /* ContentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCell.swift; sourceTree = "<group>"; };
 		05276E37262457DD00C05398 /* ContentsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentsCell.xib; sourceTree = "<group>"; };
+		05276E3B2625999600C05398 /* FollowerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerModel.swift; sourceTree = "<group>"; };
+		05276E3E26259A6300C05398 /* FollowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowModel.swift; sourceTree = "<group>"; };
 		24C07980691A10D5E41BEDAF /* Pods_LunchApp0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LunchApp0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		281CA0843502BA88CC8148E3 /* Pods-LunchApp0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchApp0.release.xcconfig"; path = "Target Support Files/Pods-LunchApp0/Pods-LunchApp0.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +143,8 @@
 				05276E1B261EA12800C05398 /* ProfileModel.swift */,
 				05276E27261FFE7200C05398 /* LoadModel.swift */,
 				05276E2A261FFFD800C05398 /* ContentModel.swift */,
+				05276E3B2625999600C05398 /* FollowerModel.swift */,
+				05276E3E26259A6300C05398 /* FollowModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,6 +305,8 @@
 				05276E312624483700C05398 /* WebViewController.swift in Sources */,
 				05276E342624552000C05398 /* ProfileViewController.swift in Sources */,
 				05276E1C261EA12800C05398 /* ProfileModel.swift in Sources */,
+				05276E3C2625999600C05398 /* FollowerModel.swift in Sources */,
+				05276E3F26259A6300C05398 /* FollowModel.swift in Sources */,
 				05276E21261EBDF600C05398 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

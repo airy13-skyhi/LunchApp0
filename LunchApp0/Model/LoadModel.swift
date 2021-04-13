@@ -21,6 +21,21 @@ protocol GetProfileDataProtocol {
     
 }
 
+protocol GetFollowers {
+    
+    //existがtrueなら自分がフォロワーの中にいる　ボタン表記を変更
+    func getFollowers(followersArray:[FollowerModel], exist:Bool)
+    
+    
+}
+
+
+protocol GetFollows {
+    
+    func getFollows(followArray:[FollowModel], exist:Bool)
+    
+}
+
 
 
 class LoadModel {
@@ -31,8 +46,24 @@ class LoadModel {
     var contentModelArray:[ContentModel] = []
     var getDataProtocol:GetDataProtocol?
     
+    //プロフィール
     var profileModelArray:[ProfileModel] = []
     var getProfileDataProtocol:GetProfileDataProtocol?
+    
+    
+    
+    
+    //フォロワー受信に関する記述
+    var followerModelArray:[FollowerModel] = []
+    
+    var getFollowers:GetFollowers?
+    
+    //フォロー受信に関する記述
+    var followModelArray:[FollowModel] = []
+    var getFollows:GetFollows?
+    
+    var ownFollowOrNot = Bool()
+    
     
     //コンテンツを受信するメソッド
     func loadContents(category:String) {
@@ -126,9 +157,96 @@ class LoadModel {
     //フォロワーのみ集める(受信する)
     func getFollowerData(id:String) {
         
-        
+        db.collection("Users").document(id).collection("follower").addSnapshotListener { (snapShot, error) in
+            
+            self.followerModelArray = []
+            
+            if error != nil {
+                return
+            }
+            
+            if let snapShotDoc = snapShot?.documents {
+                
+                for doc in snapShotDoc {
+                    
+                    let data = doc.data()
+                    
+                    if let follower = data["follower"] as? String, let followOrNot = data["followOrNot"] as? Bool, let image = data["image"] as? String, let profileText = data["profileText"] as? String, let userID = data["userID"] as? String, let userName = data["userName"] as? String {
+                        
+                        
+                        if userID == Auth.auth().currentUser!.uid {
+                            
+                            self.ownFollowOrNot = followOrNot
+                        }
+                        
+                        //true数だけフォロワーがいる、自分がtrueだったら、ボタン操作
+                        if followOrNot == true {
+                            
+                            let followerModel = FollowerModel(follower: follower, followerOrNot: followOrNot, image: image, profileText: profileText, userID: userID, userName: userName)
+                            
+                            self.followerModelArray.append(followerModel)
+                            
+                            
+                        }
+                        //自分の状態を渡す
+                        self.getFollowers?.getFollowers(followersArray: self.followerModelArray, exist: self.ownFollowOrNot)
+                        
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
         
     }
+    
+    
+    //フォローのみ集める(受信する)
+    func getFollowData(id:String) {
+        
+        db.collection("Users").document(id).collection("follow").addSnapshotListener { (snapShot, error) in
+            
+            self.followModelArray = []
+            
+            if error != nil {
+                return
+            }
+            
+            if let snapShotDoc = snapShot?.documents {
+                
+                for doc in snapShotDoc {
+                    
+                    let data = doc.data()
+                    
+                    if let follow = data["follow"] as? String, let followOrNot = data["followOrNot"] as? Bool, let image = data["image"] as? String, let profileText = data["profileText"] as? String, let userID = data["userID"] as? String, let userName = data["userName"] as? String {
+                        
+                        
+                        
+                        //true数だけフォロワーがいる、自分がtrueだったら、ボタン操作
+                        if followOrNot == true {
+                            
+                            let followModel = FollowModel(follow: follow, followOrNot: followOrNot, image: image, profileText: profileText, userID: userID, userName: userName)
+                            
+                            self.followModelArray.append(followModel)
+                            
+                            
+                        }
+                        //自分の状態を渡す
+                        self.getFollows?.getFollows(followArray: self.followModelArray, exist: self.ownFollowOrNot)
+                        
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
     
     
 }
