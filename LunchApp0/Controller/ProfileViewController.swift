@@ -162,8 +162,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func fwVC(_ sender: UIButton) {
         
-        let followVC = <#value#>
+        let followVC = storyboard?.instantiateViewController(identifier: "followVC") as! FollowAndFollowerViewController
         
+        
+        followVC.followersArray = followersArray
+        followVC.followArray = followArray
+        followVC.tag = sender.tag
+        self.navigationController?.pushViewController(followVC, animated: true)
         
     }
     

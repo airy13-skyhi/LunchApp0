@@ -31,6 +31,7 @@
 		05276E3C2625999600C05398 /* FollowerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E3B2625999600C05398 /* FollowerModel.swift */; };
 		05276E3F26259A6300C05398 /* FollowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E3E26259A6300C05398 /* FollowModel.swift */; };
 		05276E4226269F4D00C05398 /* FollowAndFollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E4126269F4D00C05398 /* FollowAndFollowerViewController.swift */; };
+		05276E452626F15400C05398 /* ContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05276E442626F15400C05398 /* ContentDetailViewController.swift */; };
 		2987125370844AE4FE50D06F /* Pods_LunchApp0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C07980691A10D5E41BEDAF /* Pods_LunchApp0.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		05276E3B2625999600C05398 /* FollowerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerModel.swift; sourceTree = "<group>"; };
 		05276E3E26259A6300C05398 /* FollowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowModel.swift; sourceTree = "<group>"; };
 		05276E4126269F4D00C05398 /* FollowAndFollowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowAndFollowerViewController.swift; sourceTree = "<group>"; };
+		05276E442626F15400C05398 /* ContentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailViewController.swift; sourceTree = "<group>"; };
 		24C07980691A10D5E41BEDAF /* Pods_LunchApp0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LunchApp0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		281CA0843502BA88CC8148E3 /* Pods-LunchApp0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchApp0.release.xcconfig"; path = "Target Support Files/Pods-LunchApp0/Pods-LunchApp0.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +136,7 @@
 				05276E302624483700C05398 /* WebViewController.swift */,
 				05276E332624552000C05398 /* ProfileViewController.swift */,
 				05276E4126269F4D00C05398 /* FollowAndFollowerViewController.swift */,
+				05276E442626F15400C05398 /* ContentDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				05276E28261FFE7200C05398 /* LoadModel.swift in Sources */,
 				05276E0D261E730B00C05398 /* ContentsViewController.swift in Sources */,
 				05276E2B261FFFD800C05398 /* ContentModel.swift in Sources */,
+				05276E452626F15400C05398 /* ContentDetailViewController.swift in Sources */,
 				05276DCE261DD32800C05398 /* AppDelegate.swift in Sources */,
 				05276E25261FD31A00C05398 /* Constants.swift in Sources */,
 				05276E19261E9DB200C05398 /* UserDefaultsEX.swift in Sources */,
