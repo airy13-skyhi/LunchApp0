@@ -29,7 +29,7 @@ class ViewController: AMPagerTabsViewController {
         if Auth.auth().currentUser != nil {
             
             //サインイン画面遷移
-            performSegue(withIdentifier: "", sender: nil)
+            performSegue(withIdentifier: "signInVC", sender: nil)
             
         }else {
             //新規登録
