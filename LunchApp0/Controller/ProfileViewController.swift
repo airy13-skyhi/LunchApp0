@@ -117,11 +117,23 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         cell.contentImageView.sd_setImage(with: URL(string: contentModelArray[indexPath.row].imageURLString!), completed: nil)
         
+        cell.shopNameLabel.text = contentModelArray[indexPath.row].shopName
+        cell.priceLabel.text = contentModelArray[indexPath.row].price
+        cell.reviewLabel.text = contentModelArray[indexPath.row].review
+        cell.reviewView.rating = contentModelArray[indexPath.row].rate!
         
         return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 400
+    }
+    
     func getData(dataArray: [ContentModel]) {
+        
+        contentModelArray = []
         
         contentModelArray = dataArray
         
@@ -146,6 +158,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
     }
+    
+    
+    @IBAction func fwVC(_ sender: UIButton) {
+        
+        let followVC = <#value#>
+        
+        
+    }
+    
+    
     
     func checkDone0(flag: Bool) {
         
