@@ -21,6 +21,8 @@ class ViewController: AMPagerTabsViewController {
         
         isTabButtonShouldFit = true
         
+        settings.tabHeight = 100
+        
         tabFont = UIFont.systemFont(ofSize: 17, weight: .bold)
         
         //ここにcontrollerを入れるとtabが生成される
@@ -58,7 +60,7 @@ class ViewController: AMPagerTabsViewController {
         for i in 0 ..< 5 {
             
             let viewController = self.storyboard?.instantiateViewController(withIdentifier: "view1") as! ContentsViewController
-            viewController.title = ""
+            viewController.title = "\(Constants.titleArray[i])"
             viewController.index = i
             vcArray.append(viewController)
         }

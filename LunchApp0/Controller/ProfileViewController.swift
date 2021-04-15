@@ -115,6 +115,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ContentsCell
         
+        cell.selectionStyle = .none
+        
         cell.contentImageView.sd_setImage(with: URL(string: contentModelArray[indexPath.row].imageURLString!), completed: nil)
         
         cell.shopNameLabel.text = contentModelArray[indexPath.row].shopName

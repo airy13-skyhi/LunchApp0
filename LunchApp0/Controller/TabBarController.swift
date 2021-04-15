@@ -14,9 +14,13 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBar.items![0].image = UIImage(named: "tab1notSelected.png")?.withRenderingMode(.alwaysOriginal)
+        tabBar.items![1].image = UIImage(named: "tab2notSelected.png")?.withRenderingMode(.alwaysOriginal)
+        tabBar.items![2].image = UIImage(named: "tab3notSelected.png")?.withRenderingMode(.alwaysOriginal)
         
-
-        
+        tabBar.items![0].selectedImage = UIImage(named: "tab1.png")
+        tabBar.items![1].selectedImage = UIImage(named: "tab2.png")
+        tabBar.items![2].selectedImage = UIImage(named: "tab3.png")
     }
     
 

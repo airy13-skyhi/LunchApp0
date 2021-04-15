@@ -56,6 +56,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        
+        blurEffectView.alpha = 1.0
+        blurEffectView.alpha = scrollView.contentOffset.y/200
+    }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -69,6 +76,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
+        cell.selectionStyle = .none
+        
         let shopLabel = cell.contentView.viewWithTag(1) as! UILabel
         shopLabel.text = contentModel?.shopName
         
@@ -77,6 +86,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let reviewTextView = cell.contentView.viewWithTag(3) as! UITextView
         reviewTextView.text = contentModel?.review
+        reviewTextView.layer.cornerRadius = 20
         
         let reviewView = cell.contentView.viewWithTag(4) as! CosmosView
         reviewView.rating = (contentModel?.rate)!
@@ -90,7 +100,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let profileView = cell.contentView.viewWithTag(7) as! UITextView
         profileView.text = contentModel?.sender![1]
-        
+        profileView.layer.cornerRadius = 20
         
         return cell
     }
