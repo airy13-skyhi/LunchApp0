@@ -6,16 +6,41 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignInViewController: UIViewController {
+    
+    
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var button: UIButton!
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        textField.layer.cornerRadius = 20
+        button.layer.cornerRadius = 20
+        
+        textField.text = Auth.auth().currentUser!.uid
         
     }
+    
+    
+    @IBAction func signIn(_ sender: Any) {
+        
+        if textField.text == Auth.auth().currentUser!.uid {
+            
+            dismiss(animated: true, completion: nil)
+        }
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        textField.resignFirstResponder()
+    }
+    
     
 
     /*

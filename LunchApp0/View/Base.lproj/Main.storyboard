@@ -718,6 +718,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N2d-Av-cz3">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemTealColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -737,6 +738,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AUg-KL-RlX">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemTealColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -769,11 +771,18 @@
                                 <state key="normal" title="サインイン">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signIn:" destination="fW8-Ut-Mm0" eventType="touchUpInside" id="sQJ-KN-4Y7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wqM-h9-UIa"/>
                         <color key="backgroundColor" red="0.059283681210000001" green="0.56494796280000004" blue="0.30108857150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="Z3N-qG-Q6u" id="Ris-oK-wYH"/>
+                        <outlet property="textField" destination="VW2-83-rnb" id="Gcv-zo-tct"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XYI-9N-Yxg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -787,6 +796,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gkg-nT-fHy">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemTealColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -806,6 +816,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rS2-ht-crD">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemTealColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
